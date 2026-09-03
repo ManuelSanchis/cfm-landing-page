@@ -1,0 +1,160 @@
+.carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+  margin-top: var(--spacing-md);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 3rem 33.75rem 3rem;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  gap: var(--spacing-lg);
+}
+
+.imageContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 33.75rem;
+  height: 33.75rem;
+}
+
+.image {
+  display: block;
+
+  width: 27rem;
+  height: 33.75rem;
+
+  object-fit: contain;
+}
+
+.horizontal {
+  width: 33.75rem;
+  height: 27rem;
+}
+
+.navigationButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 3rem;
+  height: 3rem;
+  padding: 0;
+
+  color: var(--color-text);
+
+  background: none;
+  border: 0;
+
+  cursor: pointer;
+
+  transition:
+    color var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.navigationButton:hover {
+  color: var(--color-primary);
+
+  transform: scale(1.1);
+}
+
+.navigationButton:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 0.25rem;
+}
+
+.navigationButton svg {
+  width: 2.5rem;
+  height: 2.5rem;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: var(--spacing-md);
+  gap: var(--spacing-sm);
+}
+
+.paginationButton {
+  width: 0.5rem;
+  height: 0.5rem;
+  padding: 0;
+
+  background-color: var(--color-text);
+  border: 0;
+  border-radius: 50%;
+
+  opacity: 0.3;
+
+  cursor: pointer;
+
+  transition:
+    opacity var(--transition-fast),
+    transform var(--transition-fast);
+}
+
+.paginationButton:hover {
+  opacity: 0.6;
+}
+
+.paginationButton[aria-current='true'] {
+  opacity: 1;
+
+  transform: scale(1.2);
+}
+
+@media (max-width: 48rem) {
+  .content {
+    grid-template-columns: 2.5rem minmax(0, 1fr) 2.5rem;
+
+    padding-inline: var(--spacing-md);
+    gap: var(--spacing-sm);
+  }
+
+  .imageContainer {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .image {
+    width: 80%;
+    height: auto;
+    max-height: 100%;
+
+    aspect-ratio: 4 / 5;
+  }
+
+  .horizontal {
+    width: 100%;
+    height: auto;
+
+    aspect-ratio: 5 / 4;
+  }
+
+  .navigationButton {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .navigationButton svg {
+    width: 2rem;
+    height: 2rem;
+  }
+
+  .pagination {
+    margin-top: var(--spacing-md);
+    gap: var(--spacing-xs);
+  }
+}
