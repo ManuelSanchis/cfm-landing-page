@@ -1,0 +1,61 @@
+:root {
+  /* Fonts */
+  --font-display: 'Caslon Antique', serif;
+  --font-body: 'EB Garamond', serif;
+
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 4rem;
+  --font-size-7xl: 5rem;
+  --font-size-8xl: 6rem;
+
+  /* Colors */
+  --color-text: #2f2b24;
+  --color-text-muted: #625c50;
+
+  --color-primary: #3f4637;
+  --color-primary-hover: #32382c;
+
+  --color-accent: #7b6947;
+
+  --color-background: #d8d4c4;
+
+  --color-surface: rgb(232 228 211 / 70%);
+  --color-surface-strong: rgb(232 228 211 / 90%);
+
+  --color-instagram: #8a3f4b;
+
+  --color-border: rgb(63 58 47 / 50%);
+  --color-divider: rgb(76 70 58 / 15%);
+
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgb(0 0 0 / 12%);
+  --shadow-md: 0 4px 12px rgb(0 0 0 / 16%);
+
+  /* Layout */
+  --content-max-width: 75rem;
+  --header-logo-width: 6rem;
+
+  /* Border radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 0.75rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4rem;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}
