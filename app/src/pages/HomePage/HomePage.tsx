@@ -1,3 +1,4 @@
+import { KickstarterBanner } from '@/components/KickstarterBanner/KickstarterBanner';
 import { MiniatureCarousel } from '@/components/MiniatureCarousel/MiniatureCarousel';
 
 export const HomePage = () => {
@@ -15,7 +16,7 @@ export const HomePage = () => {
 
       <MiniatureCarousel />
 
-      {/* <KickstarterBanner /> */}
+      <KickstarterBanner />
     </div>
   );
 };
