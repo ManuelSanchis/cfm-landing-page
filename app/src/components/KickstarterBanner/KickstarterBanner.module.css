@@ -1,0 +1,37 @@
+.banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  margin-top: var(--spacing-xl);
+}
+
+.text {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: var(--font-size-3xl);
+  font-weight: 600;
+  line-height: 1;
+
+  color: var(--color-text);
+
+  text-align: center;
+}
+
+@media (max-width: 48rem) {
+  .banner {
+    flex: 1;
+
+    margin-top: 0;
+    padding-inline: var(--spacing-lg);
+  }
+
+  .text {
+    max-width: 18rem;
+
+    font-size: var(--font-size-2xl);
+    line-height: 1.1;
+  }
+}
