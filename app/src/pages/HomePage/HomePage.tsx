@@ -1,3 +1,5 @@
+import { MiniatureCarousel } from '@/components/MiniatureCarousel/MiniatureCarousel';
+
 export const HomePage = () => {
   return (
     <div>
@@ -11,7 +13,7 @@ export const HomePage = () => {
         <p>Hand-sculpted miniatures</p>
       </header>
 
-      {/* <MiniatureCarousel /> */}
+      <MiniatureCarousel />
 
       {/* <KickstarterBanner /> */}
     </div>
