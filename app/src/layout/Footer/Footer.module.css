@@ -6,11 +6,13 @@
   justify-content: center;
 
   width: 100%;
+  gap: var(--spacing-lg);
   padding: var(--spacing-xl) var(--spacing-2xl);
 }
 
 .footer::before {
   position: absolute;
+
   top: 0;
   left: 50%;
 
@@ -26,6 +28,7 @@
   );
 
   content: '';
+
   transform: translateX(-50%);
 }
 
@@ -36,6 +39,8 @@
 
   color: var(--color-instagram);
 
+  -webkit-tap-highlight-color: transparent;
+
   transition:
     transform var(--transition-fast),
     opacity var(--transition-fast);
@@ -43,7 +48,6 @@
 
 .instagramLink:hover {
   opacity: 0.8;
-
   transform: scale(1.08);
 }
 
@@ -59,6 +63,35 @@
   fill: currentColor;
 }
 
+.mailLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--color-text-muted);
+
+  -webkit-tap-highlight-color: transparent;
+
+  transition:
+    transform var(--transition-fast),
+    opacity var(--transition-fast);
+}
+
+.mailLink:hover {
+  opacity: 0.8;
+  transform: scale(1.08);
+}
+
+.mailLink:focus-visible {
+  outline: 2px solid var(--color-text-muted);
+  outline-offset: 0.25rem;
+}
+
+.mailIcon {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
 @media (max-width: 48rem) {
   .footer {
     padding: var(--spacing-lg) var(--spacing-md);
@@ -71,5 +104,10 @@
   .instagramIcon {
     width: 1.75rem;
     height: 1.75rem;
+  }
+
+  .mailIcon {
+    width: 2.15rem;
+    height: 2.15rem;
   }
 }
