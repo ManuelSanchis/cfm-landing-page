@@ -35,3 +35,16 @@
     line-height: 1.1;
   }
 }
+
+@media (max-width: 48rem) and (max-height: 700px) {
+  .banner {
+    flex: none;
+
+    margin-top: var(--spacing-sm);
+    padding-bottom: var(--spacing-md);
+  }
+
+  .text {
+    font-size: var(--font-size-xl);
+  }
+}
