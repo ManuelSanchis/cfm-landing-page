@@ -1,0 +1,19 @@
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/2.0.0/).
+
+## [Unreleased]
+
+## [1.0.0] - 2026-09-04
+
+### Added
+
+* *Raiders of the Sunken City* miniature showcase.
+* Interactive miniature carousel with navigation controls.
+* Instagram social media integration.
+* Responsive interface for desktop and mobile devices.
+
+[Unreleased]: https://github.com/ManuelSanchis/cfm-landing-page/compare/v1.0.0...develop
+[1.0.0]: https://github.com/ManuelSanchis/cfm-landing-page/releases/tag/v1.0.0
