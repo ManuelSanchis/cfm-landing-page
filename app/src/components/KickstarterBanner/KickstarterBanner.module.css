@@ -38,10 +38,7 @@
 
 @media (max-width: 48rem) and (max-height: 700px) {
   .banner {
-    flex: none;
-
-    margin-top: var(--spacing-sm);
-    padding-bottom: var(--spacing-md);
+    padding-block: var(--spacing-sm);
   }
 
   .text {
