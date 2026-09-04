@@ -1,3 +1,4 @@
+import { Mail } from 'lucide-react';
 import { siInstagram } from 'simple-icons';
 
 import styles from './Footer.module.css';
@@ -5,6 +6,14 @@ import styles from './Footer.module.css';
 export const Footer = () => {
   return (
     <footer className={styles.footer}>
+      <a
+        className={styles.mailLink}
+        href="mailto:info@cfminiatures.com"
+        aria-label="Email Classic Fantasy Miniatures"
+      >
+        <Mail className={styles.mailIcon} strokeWidth={1.75} aria-hidden="true" />
+      </a>
+
       <a
         className={styles.instagramLink}
         href="https://www.instagram.com/classicfantasyminiatures/"

@@ -56,11 +56,12 @@
 
   cursor: pointer;
 
+  -webkit-tap-highlight-color: transparent;
+
   transition:
     color var(--transition-fast),
     transform var(--transition-fast);
 }
-
 .navigationButton:hover {
   color: var(--color-primary);
 
