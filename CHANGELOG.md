@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/2.0.0/).
 ### Fixed
 
 * Adjusted Kickstarter banner spacing on mobile devices.
+* Removed the tap highlight from miniature carousel navigation buttons on mobile devices.
 
 ## [1.0.0] - 2026-09-04
 
