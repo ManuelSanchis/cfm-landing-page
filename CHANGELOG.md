@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/2.0.0/).
 ### Fixed
 
 * Improved miniature carousel transitions by preloading images.
+* Fixed Kickstarter banner layout in Instagram's in-app browser.
 
 ## [1.1.1] - 2026-09-07
 
