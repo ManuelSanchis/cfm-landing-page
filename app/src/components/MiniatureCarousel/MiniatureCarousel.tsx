@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 import { MINIATURES } from '@/config/miniatures.config';
 
@@ -10,6 +10,15 @@ export const MiniatureCarousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const currentMiniature = MINIATURES[currentIndex];
+
+  useEffect(() => {
+    MINIATURES.forEach((miniature) => {
+      const image = new Image();
+
+      image.src = miniature.image;
+      image.decode().catch(() => {});
+    });
+  }, []);
 
   const showPrevious = () => {
     setCurrentIndex((previousIndex) =>
@@ -41,6 +50,7 @@ export const MiniatureCarousel = () => {
 
         <div className={styles.imageContainer}>
           <img
+            key={currentMiniature.id}
             className={clsx(styles.image, {
               [styles.horizontal]: currentMiniature.orientation === 'horizontal',
             })}
