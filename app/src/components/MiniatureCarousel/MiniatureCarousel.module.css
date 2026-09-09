@@ -17,6 +17,26 @@
   gap: var(--spacing-lg);
 }
 
+.viewport {
+  width: 33.75rem;
+
+  overflow: hidden;
+}
+
+.container {
+  display: flex;
+
+  margin-left: -1px;
+
+  touch-action: pan-y pinch-zoom;
+}
+
+.slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  padding-left: 1px;
+}
+
 .imageContainer {
   display: flex;
   align-items: center;
@@ -62,6 +82,7 @@
     color var(--transition-fast),
     transform var(--transition-fast);
 }
+
 .navigationButton:hover {
   color: var(--color-primary);
 
@@ -100,6 +121,8 @@
 
   cursor: pointer;
 
+  -webkit-tap-highlight-color: transparent;
+
   transition:
     opacity var(--transition-fast),
     transform var(--transition-fast);
@@ -107,6 +130,11 @@
 
 .paginationButton:hover {
   opacity: 0.6;
+}
+
+.paginationButton:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 0.25rem;
 }
 
 .paginationButton[aria-current='true'] {
@@ -123,9 +151,29 @@
     gap: var(--spacing-sm);
   }
 
+  .viewport {
+    width: 100%;
+
+    overflow: hidden;
+  }
+
+  .container {
+    margin-left: 0;
+  }
+
+  .slide {
+    flex: 0 0 100%;
+    min-width: 0;
+    padding-left: 0;
+
+    overflow: hidden;
+  }
+
   .imageContainer {
     width: 100%;
     height: auto;
+    padding-inline: 1px;
+
     aspect-ratio: 1;
   }
 

@@ -1,40 +1,50 @@
 import clsx from 'clsx';
+import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 import { MINIATURES } from '@/config/miniatures.config';
 
 import styles from './MiniatureCarousel.module.css';
 
 export const MiniatureCarousel = () => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: true,
+    duration: 20,
+  });
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const currentMiniature = MINIATURES[currentIndex];
+  const showPrevious = useCallback(() => {
+    emblaApi?.scrollPrev();
+  }, [emblaApi]);
+
+  const showNext = useCallback(() => {
+    emblaApi?.scrollNext();
+  }, [emblaApi]);
+
+  const showMiniature = useCallback(
+    (index: number) => {
+      emblaApi?.scrollTo(index);
+    },
+    [emblaApi],
+  );
+
+  const updateCurrentIndex = useCallback(() => {
+    if (!emblaApi) return;
+
+    setCurrentIndex(emblaApi.selectedScrollSnap());
+  }, [emblaApi]);
 
   useEffect(() => {
-    MINIATURES.forEach((miniature) => {
-      const image = new Image();
+    if (!emblaApi) return;
 
-      image.src = miniature.image;
-      image.decode().catch(() => {});
-    });
-  }, []);
+    emblaApi.on('select', updateCurrentIndex);
 
-  const showPrevious = () => {
-    setCurrentIndex((previousIndex) =>
-      previousIndex === 0 ? MINIATURES.length - 1 : previousIndex - 1,
-    );
-  };
-
-  const showNext = () => {
-    setCurrentIndex((previousIndex) =>
-      previousIndex === MINIATURES.length - 1 ? 0 : previousIndex + 1,
-    );
-  };
-
-  const showMiniature = (index: number) => {
-    setCurrentIndex(index);
-  };
+    return () => {
+      emblaApi.off('select', updateCurrentIndex);
+    };
+  }, [emblaApi, updateCurrentIndex]);
 
   return (
     <section className={styles.carousel} aria-label="Miniature gallery">
@@ -48,15 +58,22 @@ export const MiniatureCarousel = () => {
           <ChevronLeft aria-hidden="true" />
         </button>
 
-        <div className={styles.imageContainer}>
-          <img
-            key={currentMiniature.id}
-            className={clsx(styles.image, {
-              [styles.horizontal]: currentMiniature.orientation === 'horizontal',
-            })}
-            src={currentMiniature.image}
-            alt={currentMiniature.name}
-          />
+        <div className={styles.viewport} ref={emblaRef}>
+          <div className={styles.container}>
+            {MINIATURES.map((miniature) => (
+              <div className={styles.slide} key={miniature.id}>
+                <div className={styles.imageContainer}>
+                  <img
+                    className={clsx(styles.image, {
+                      [styles.horizontal]: miniature.orientation === 'horizontal',
+                    })}
+                    src={miniature.image}
+                    alt={miniature.name}
+                  />
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
 
         <button
