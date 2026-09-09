@@ -6,6 +6,10 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/2.0.0/).
 
 ## [Unreleased]
 
+### Added
+
+* Embla Carousel for smoother miniature gallery navigation.
+
 ## [1.1.2] - 2026-09-07
 
 ### Fixed
